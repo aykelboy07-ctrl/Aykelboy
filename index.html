@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Wheel Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome ለተለያዩ አዶዎች (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 🔝 የላይኛው ክፍል (User & Balance Info) -->
+        <div class="header">
+            <div class="user-info">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div>
+                    <span id="username" class="username">@man</span>
+                    <span id="user-id" class="user-id">7256311539</span>
+                </div>
+            </div>
+            <div class="top-stats">
+                <div class="stat-badge"><span class="icon">🪙</span> <span id="ecx-val">1.525</span></div>
+                <div class="stat-badge"><span class="icon">🎡</span> <span id="spin-count">0</span></div>
+                <div class="stat-badge"><span class="icon">💎</span> <span id="gem-count">711</span></div>
+            </div>
+        </div>
+
+        <!-- 💰 የካሽ አውት (Cash out) ማሳሰቢያ ባር -->
+        <div class="cashout-banner">
+            <div class="cashout-text">Only <span id="left-cash">$1.494</span> to cash out</div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 70%;"></div>
+            </div>
+            <div class="target-amount">$5</div>
+        </div>
+
+        <!-- 🎡 የዕድል ማዞሪያ (Spin Wheel) ዋና ክፍል -->
+        <div class="wheel-section">
+            <div class="more-spins-hot">
+                <span class="hot-tag">HOT</span>
+                <i class="fa-solid fa-gift"></i>
+                <small>More Spins</small>
+            </div>
+
+            <div class="wheel-container">
+                <div class="pointer"></div>
+                <div id="wheel" class="wheel">
+                    <!-- የዊል ክፍሎች (Slices) በ CSS Conic Gradient ተሸፍነዋል -->
+                </div>
+                <button id="spin-btn" onclick="spinWheel()">
+                    <span class="spin-text">SPIN</span>
+                    <span class="spin-price">1K 💎</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 🟩 የግብዣ ቁልፍ (Invite Button) -->
+        <div class="action-section">
+            <button class="invite-btn">
+                <span class="gift-icon">🎁</span> Invite for Spins!
+            </button>
+            <div class="share-options">
+                <span>Share To:</span>
+                <div class="social-icons">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔻 የታችኛው ናቪጌሽን ባር (Footer Menu) -->
+        <div class="nav-bar">
+            <div class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Team</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-box-open"></i>
+                <span>Earn</span>
+            </div>
+            <div class="nav-item active">
+                <i class="fa-solid fa-dharmachakra"></i>
+                <span>Spin</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Events</span>
+            </div>
+            <div class="nav-item">
+                <i class="fa-solid fa-user"></i>
+                <span>My</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
